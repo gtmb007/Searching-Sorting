@@ -31,8 +31,8 @@ class Main {
 		}	
 	}
 	static void merge(int[] arr,int l,int mid,int r) {
-		int[] temp=new int[arr.length];
-		int i=l,j=mid+1,k=l;
+		int[] temp=new int[r-l+1];
+		int i=l,j=mid+1,k=0;
 		while(i<=mid && j<=r) {
 			if(arr[i]<arr[j]) {
 				temp[k++]=arr[i++];
@@ -46,8 +46,8 @@ class Main {
 		while(j<=r) {
 			temp[k++]=arr[j++];
 		}
-		for(int u=l;u<k;u++) {
-			arr[u]=temp[u];	
+		for(int u=l,v=0;v<k;u++,v++) {
+			arr[u]=temp[v];	
 		}
 	}
 }
